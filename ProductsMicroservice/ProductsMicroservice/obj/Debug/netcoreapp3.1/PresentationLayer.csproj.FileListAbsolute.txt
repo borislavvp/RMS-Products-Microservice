@@ -10,8 +10,6 @@ D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservi
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\PresentationLayer.runtimeconfig.dev.json
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\PresentationLayer.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\PresentationLayer.pdb
-D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
-D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\EntityFramework.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -33,11 +31,9 @@ D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservi
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\System.CodeDom.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
-D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
@@ -52,11 +48,6 @@ D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservi
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
-D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
-D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
-D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
-D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\DatabaseLayer.dll
