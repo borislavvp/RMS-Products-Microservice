@@ -32,6 +32,13 @@ namespace DatabaseLayer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Category");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("312d245c-cb9f-4dad-b7e3-848baecc43fd"),
+                            Name = "Test"
+                        });
                 });
 
             modelBuilder.Entity("DatabaseLayer.Entities.ProductEntity", b =>

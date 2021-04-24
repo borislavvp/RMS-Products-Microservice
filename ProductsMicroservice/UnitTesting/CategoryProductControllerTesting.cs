@@ -1,6 +1,8 @@
 ﻿using DatabaseLayer.DB;
 using DatabaseLayer.Entities;
 using DatabaseLayer.RelationshipRepos;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 using PresentationLayer.Controllers.RelationshipControllers;
 using PresentationLayer.Models;
@@ -17,9 +19,10 @@ namespace UnitTesting
         private ApplicationDbContext _context;
 
         [SetUp]
-        public void Setup(ApplicationDbContext context)
+        public void Setup()
         {
-            _context = context;
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseSqlServer(@"Server=DESKTOP-GJVD2M7;Database=proep-products;Trusted_Connection=True").Options;
+            _context = new ApplicationDbContext(options);
             cpc = new CategoryProductController(_context);
             cpr = new CategoryProductRepo(_context);
         }
@@ -27,45 +30,30 @@ namespace UnitTesting
         [Test]
         public void AttachProductToCategory_Test()
         {
-            Guid categoryId = new Guid("5a41f438-9f5b-413f-b96b-875f3d9edd1e");
+            Guid categoryId = new Guid("312d245c-cb9f-4dad-b7e3-848baecc43fd");
             Guid productId = new Guid("c72b31c4-5392-4056-a54f-2dcb4b290aac");
-            Assert.AreEqual(1, cpc.Attach(productId,categoryId));
+            var result = cpc.Attach(productId, categoryId);
+            var okResult = result as OkObjectResult;
+            Assert.AreEqual(okResult.StatusCode, 200);
         }
 
         [Test]
         public void DetachProductFromCategory_Test()
         {
-            Guid categoryId = new Guid("5a41f438-9f5b-413f-b96b-875f3d9edd1e");
+            Guid categoryId = new Guid("73289780-af63-4222-9f5d-551cfed67f48");
             Guid productId = new Guid("c72b31c4-5392-4056-a54f-2dcb4b290aac");
-            Assert.AreEqual(1, cpc.Detach(categoryId , productId ));
+            var result = cpc.Detach(categoryId, productId);
+            var okResult = result as OkObjectResult;
+            Assert.AreEqual(okResult.StatusCode, 200);
         }
 
         [Test]
         public void GetAllProjectsBy_Test()
         {
-            Guid categoryId = new Guid("5a41f438-9f5b-413f-b96b-875f3d9edd1e");
-            List<ProductModel> tempList = new List<ProductModel>();
-            var temp = cpr.GetAllbyParent(categoryId);
-
-
-            foreach (ProductEntity u in temp)
-            {
-
-                ProductModel temporary = new ProductModel()
-                {
-                    Id = u.Id,
-                    Name = u.Name,
-                    Description = u.Description,
-                    Ingredients = u.Ingredients,
-                    Image = (u.Image == null) ? null : u.Image,
-                    Price = (u.Price == 0) ? 0 : u.Price,
-                    Availability = u.Availability
-
-                };
-                tempList.Add(temporary);
-            }
+            Guid categoryId = new Guid("73289780-af63-4222-9f5d-551cfed67f48");
             var result = cpc.GetAllByParent(categoryId);
-            CollectionAssert.AreEquivalent(result.Value, tempList);
+            var okResult = result.Result as OkObjectResult;
+            Assert.AreEqual(okResult.StatusCode, 200);
         }
     }
 }

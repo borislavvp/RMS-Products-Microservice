@@ -6,6 +6,10 @@ using PresentationLayer.Controllers;
 using PresentationLayer.Models;
 using System;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Mvc;
 
 namespace UnitTesting
 {
@@ -15,9 +19,11 @@ namespace UnitTesting
         private ProductRepo pr;
         private ApplicationDbContext _context;
         [SetUp]
-        public void Setup(ApplicationDbContext context)
+        public void Setup()
         {
-            _context = context;
+
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseSqlServer(@"Server=DESKTOP-GJVD2M7;Database=proep-products;Trusted_Connection=True").Options;
+            _context = new ApplicationDbContext(options);
             pc = new ProductsController(_context);
             pr = new ProductRepo(_context);
         }
@@ -25,49 +31,19 @@ namespace UnitTesting
         [Test]
         public void GetAllProducts_Test()
         {
-            List<ProductModel> tempList = new List<ProductModel>();
-            var temp = pr.GetAll();
-
-
-            foreach (ProductEntity u in temp)
-            {
-
-                ProductModel temporary = new ProductModel()
-                {
-                    Id = u.Id,
-                    Name = u.Name,
-                    Description = u.Description,
-                    Ingredients = u.Ingredients,
-                    Image = (u.Image == null) ? null : u.Image,
-                    Price = (u.Price == 0) ? 0 : u.Price,
-                    Availability = u.Availability
-
-                };
-                tempList.Add(temporary);
-            }
-
             var result = pc.GetAll();
-            CollectionAssert.AreEquivalent(result.Value,tempList);
+            var okResult = result.Result as OkObjectResult;
+            Assert.AreEqual(okResult.StatusCode, 200);
         }
 
         [Test]
         public void GetProductById_Test()
         {
-            Guid i = new Guid("b0a403b4-2347-414a-9b05-1ff0e5d0406f");
-            var u = pr.GetById(i);
-            ProductModel temporary = new ProductModel()
-            {
-                Id = u.Id,
-                Name = u.Name,
-                Description = u.Description,
-                Ingredients = u.Ingredients,
-                Image = (u.Image == null) ? null : u.Image,
-                Price = (u.Price == 0) ? 0 : u.Price,
-                Availability = u.Availability
-
-            };
+            Guid i = new Guid("c72b31c4-5392-4056-a54f-2dcb4b290aac");
             var result = pc.GetById(i);
-            Assert.AreEqual(result.Value.Id,temporary.Id);
+            var okResult = result.Result as OkObjectResult;
+            Assert.AreEqual(okResult.StatusCode,200);
+
         }
 
 
@@ -86,14 +62,18 @@ namespace UnitTesting
                 Availability = 1
 
             };
-            Assert.AreEqual(1, pc.Insert(temporary));
+            var result = pc.Insert(temporary);
+            var okResult = result as OkObjectResult;
+            Assert.AreEqual(okResult.StatusCode, 200);
         }
 
         [Test]
         public void DeleteProduct_Test()
         {
             Guid i = new Guid("c72b31c4-5392-4056-a54f-2dcb4b290aac");
-            Assert.AreEqual(1, pc.Delete(i));
+            var result = pc.Delete(i);
+            var okResult = result as OkObjectResult;
+            Assert.AreEqual(okResult.StatusCode, 200);
         }
 
         [Test]
@@ -101,7 +81,10 @@ namespace UnitTesting
         {
             Guid i = new Guid("c72b31c4-5392-4056-a54f-2dcb4b290aac");
             string name = "testNameChanged";
-            Assert.AreEqual(1, pc.Update(i,name));
+            
+            var result = pc.Update(i, name);
+            var okResult = result as OkObjectResult;
+            Assert.AreEqual(okResult.StatusCode, 200);
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using DatabaseLayer.BaseRepos;
 using DatabaseLayer.DB;
 using DatabaseLayer.Entities;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 using PresentationLayer.Controllers.BaseControllers;
 using PresentationLayer.Models;
@@ -18,9 +20,10 @@ namespace UnitTesting
         private ApplicationDbContext _context;
 
         [SetUp]
-        public void Setup(ApplicationDbContext context)
+        public void Setup()
         {
-            _context = context;
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseSqlServer(@"Server=DESKTOP-GJVD2M7;Database=proep-products;Trusted_Connection=True").Options;
+            _context = new ApplicationDbContext(options);
             cc = new CategoryController(_context);
             cr = new CategoryRepo(_context);
         }
@@ -46,7 +49,8 @@ namespace UnitTesting
             }
 
             var result = cc.GetAll();
-            CollectionAssert.AreEquivalent(result.Value, tempList);
+            var okResult = result.Result as OkObjectResult;
+            Assert.AreEqual(okResult.StatusCode, 200);
         }
 
         public List<ProductModel> ConvertProjects(List<ProductEntity> prs)

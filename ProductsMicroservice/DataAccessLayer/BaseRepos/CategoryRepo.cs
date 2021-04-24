@@ -27,7 +27,7 @@ namespace DatabaseLayer.BaseRepos
 
         public ICollection<CategoryEntity> GetAll()
         {
-            ICollection<CategoryEntity> temp = _context.Categories.ToList();
+            ICollection<CategoryEntity> temp = _context.Categories.Include(u => u.Products).ToList();
             return temp;
         }
 

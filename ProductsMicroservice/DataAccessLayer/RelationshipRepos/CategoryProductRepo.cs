@@ -26,7 +26,7 @@ namespace DatabaseLayer.RelationshipRepos
         {
             if (idOfentityToBeAdded != null && idOfParent != null)
             {
-                var tempCategory = _dbSetCategory.Include(u => u.Id).First(u => u.Id == idOfParent);
+                var tempCategory = _dbSetCategory.Include(u => u.Products).First(u => u.Id == idOfParent);
                 var tempProduct = _dbSetProduct.First(u => u.Id == idOfentityToBeAdded);
 
                 tempCategory.Products.Add(tempProduct);
@@ -39,7 +39,7 @@ namespace DatabaseLayer.RelationshipRepos
         {
             if (idOfentityToBeRemoved != null && idOfParent != null)
             {
-                var tempCategory = _dbSetCategory.Include(u => u.Id).First(u => u.Id == idOfParent);
+                var tempCategory = _dbSetCategory.Include(u => u.Products).First(u => u.Id == idOfParent);
                 var tempProduct = _dbSetProduct.First(u => u.Id == idOfentityToBeRemoved);
 
                 tempCategory.Products.Remove(tempProduct);
