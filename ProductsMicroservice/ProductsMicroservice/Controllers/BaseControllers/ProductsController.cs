@@ -27,7 +27,7 @@ namespace PresentationLayer.Controllers
 
 
         [HttpGet]
-        [Route("/products/getAll")]
+        [Route("products/getAll")]
         public ActionResult<List<ProductModel>> GetAll()
         {
             List<ProductModel> tempList = new List<ProductModel>();
@@ -55,7 +55,7 @@ namespace PresentationLayer.Controllers
         }
 
         [HttpGet]
-        [Route("/products/getbyid/{id}")]
+        [Route("products/getbyid/{id}")]
         public ActionResult<ProductModel> GetById(Guid id)
         {
             var u = product.GetById(id);
@@ -75,7 +75,7 @@ namespace PresentationLayer.Controllers
 
 
         [HttpPost]
-        [Route("/products/insert")]
+        [Route("products/insert")]
         public IActionResult Insert([Microsoft.AspNetCore.Mvc.FromForm] ProductModel u)
         {
             ProductEntity temporary = new ProductEntity()
@@ -95,14 +95,14 @@ namespace PresentationLayer.Controllers
 
 
         [HttpDelete]
-        [Route("/products/delete/{id}")]
+        [Route("products/delete/{id}")]
         public IActionResult Delete(Guid id)
         {
             return Ok(product.Delete(id));
         }
 
         [HttpPut]
-        [Route("/products/update/{id}")]
+        [Route("products/update/{id}")]
         public IActionResult Update
         (
             Guid id,
