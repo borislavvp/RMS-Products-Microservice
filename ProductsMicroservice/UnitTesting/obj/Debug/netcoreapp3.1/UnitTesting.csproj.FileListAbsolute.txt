@@ -136,8 +136,14 @@ D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservi
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.csprojAssemblyReference.cache
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.AssemblyInfoInputs.cache
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.AssemblyInfo.cs
-D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.csproj.CoreCompileInputs.cache
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.csproj.CopyComplete
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.pdb
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.genruntimeconfig.cache
+D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
+D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
+D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\bin\Debug\netcoreapp3.1\System.Text.Json.dll

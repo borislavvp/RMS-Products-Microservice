@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Azure.Storage.Blobs;
 using DatabaseLayer.DB;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,6 +13,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using DatabaseLayer.AzureBlobRepo;
+using DatabaseLayer;
 
 namespace ProductsMicroservice
 {
@@ -28,14 +31,22 @@ namespace ProductsMicroservice
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
             services.AddDbContext<ApplicationDbContext>(
         options => options.UseSqlServer(@"Server=DESKTOP-GJVD2M7;Database=proep-products;Trusted_Connection=True"));
+            services.AddScoped(x => new BlobServiceClient(Configuration.GetValue<string>("ConnectionStringAzureBlob")));
+            services.AddScoped<IBlobService, BlobService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors("MyPolicy");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
