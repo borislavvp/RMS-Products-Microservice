@@ -21,6 +21,8 @@ namespace PresentationLayer.Models
 
         public string Image { get; set; }
 
-        public Guid CategoryId { get; }
+        public Guid? CategoryId { get; set; }
+
+        public CategoryModel Category { get; set; }
     }
 }

@@ -147,3 +147,9 @@ D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservi
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\bin\Debug\netcoreapp3.1\Azure.Core.dll
+D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\bin\Debug\netcoreapp3.1\Azure.Storage.Blobs.dll
+D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\bin\Debug\netcoreapp3.1\Azure.Storage.Common.dll
+D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\UnitTesting\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

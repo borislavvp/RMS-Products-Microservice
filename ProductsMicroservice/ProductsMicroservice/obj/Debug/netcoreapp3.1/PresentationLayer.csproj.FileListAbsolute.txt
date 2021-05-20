@@ -72,5 +72,10 @@ D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservi
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\Azure.Storage.Blobs.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\Azure.Storage.Common.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\obj\Debug\netcoreapp3.1\PresentationLayer.csproj.CoreCompileInputs.cache
 D:\DESKTOP2\Fontys\Pro-ep\Microservices\Products-Microservice\ProductsMicroservice\ProductsMicroservice\obj\Debug\netcoreapp3.1\PresentationLayer.MvcApplicationPartsAssemblyInfo.cache

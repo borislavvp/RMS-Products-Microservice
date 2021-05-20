@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Mvc;
+using AutoMapper;
 
 namespace UnitTesting
 {
@@ -18,13 +19,15 @@ namespace UnitTesting
         private ProductsController pc;
         private ProductRepo pr;
         private ApplicationDbContext _context;
+        private IMapper _mapper;
         [SetUp]
         public void Setup()
         {
-
+            var config = new MapperConfiguration(cfg => cfg.AddProfile<MappingProfile>());
+            this._mapper = config.CreateMapper();
             var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseSqlServer(@"Server=DESKTOP-GJVD2M7;Database=proep-products;Trusted_Connection=True").Options;
             _context = new ApplicationDbContext(options);
-            pc = new ProductsController(_context);
+            pc = new ProductsController(_context,_mapper);
             pr = new ProductRepo(_context);
         }
 

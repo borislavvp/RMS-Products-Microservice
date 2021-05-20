@@ -30,6 +30,8 @@ namespace DatabaseLayer.RelationshipRepos
                 var tempProduct = _dbSetProduct.First(u => u.Id == idOfentityToBeAdded);
 
                 tempCategory.Products.Add(tempProduct);
+                tempProduct.Category = tempCategory;
+                tempProduct.CategoryId = null;
                 return _context.SaveChanges();
             }
             return 0;
@@ -43,6 +45,8 @@ namespace DatabaseLayer.RelationshipRepos
                 var tempProduct = _dbSetProduct.First(u => u.Id == idOfentityToBeRemoved);
 
                 tempCategory.Products.Remove(tempProduct);
+                tempProduct.Category = null;
+                tempProduct.CategoryId = tempCategory.Id;
                 return _context.SaveChanges();
             }
             return 0;

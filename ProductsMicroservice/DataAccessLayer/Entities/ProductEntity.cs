@@ -28,7 +28,8 @@ namespace DatabaseLayer.Entities
 
         public string Image { get; set; }
 
-        [ForeignKey("CategoryId")]
-        public Guid CategoryId { get; }
+        public Guid? CategoryId { get; set; }
+
+        public CategoryEntity Category { get; set; }
     }
 }

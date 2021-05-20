@@ -1,4 +1,5 @@
-﻿using DatabaseLayer.BaseRepos;
+﻿using AutoMapper;
+using DatabaseLayer.BaseRepos;
 using DatabaseLayer.DB;
 using DatabaseLayer.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -18,13 +19,16 @@ namespace UnitTesting
         private CategoryController cc;
         private CategoryRepo cr;
         private ApplicationDbContext _context;
+        private IMapper _mapper;
 
         [SetUp]
         public void Setup()
         {
+            var config = new MapperConfiguration(cfg => cfg.AddProfile<MappingProfile>());
+            this._mapper = config.CreateMapper();
             var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseSqlServer(@"Server=DESKTOP-GJVD2M7;Database=proep-products;Trusted_Connection=True").Options;
             _context = new ApplicationDbContext(options);
-            cc = new CategoryController(_context);
+            cc = new CategoryController(_context,_mapper);
             cr = new CategoryRepo(_context);
         }
 

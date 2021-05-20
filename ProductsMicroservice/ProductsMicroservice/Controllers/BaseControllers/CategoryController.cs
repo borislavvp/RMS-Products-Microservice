@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using DatabaseLayer.BaseRepos;
 using DatabaseLayer.DB;
 using DatabaseLayer.Entities;
@@ -17,12 +18,13 @@ namespace PresentationLayer.Controllers.BaseControllers
     {
         private readonly ApplicationDbContext _context;
         private readonly CategoryRepo category;
+        private readonly IMapper _mapper;
 
-        public CategoryController(ApplicationDbContext context)
+        public CategoryController(ApplicationDbContext context, IMapper mapper)
         {
             _context = context;
             category = new CategoryRepo(_context);
-
+            _mapper = mapper;
         }
 
 
@@ -37,39 +39,12 @@ namespace PresentationLayer.Controllers.BaseControllers
             foreach (CategoryEntity u in temp)
             {
 
-                CategoryModel temporary = new CategoryModel()
-                {
-                    Id = u.Id,
-                    Name = u.Name,
-                    Products = ConvertProjects(u.Products.ToList())
-
-                };
+                var temporary = _mapper.Map<CategoryModel>(u);
                 tempList.Add(temporary);
             }
 
             return Ok(tempList);
         }
 
-        public List<ProductModel> ConvertProjects(List<ProductEntity> prs)
-        {
-            List<ProductModel> tempList = new List<ProductModel>();
-            foreach (ProductEntity u in prs)
-            {
-
-                ProductModel temporary = new ProductModel()
-                {
-                    Id = u.Id,
-                    Name = u.Name,
-                    Description = u.Description,
-                    Ingredients = u.Ingredients,
-                    Image = (u.Image == null) ? null : u.Image,
-                    Price = (u.Price == 0) ? 0 : u.Price,
-                    Availability = u.Availability
-
-                };
-                tempList.Add(temporary);
-            }
-            return tempList;
-        }
     }
 }
