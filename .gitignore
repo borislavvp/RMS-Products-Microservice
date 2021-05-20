@@ -14,3 +14,7 @@ ProductsMicroservice/UnitTesting/bin/Debug/
 ProductsMicroservice/UnitTesting/obj/
 
 ProductsMicroservice/ProductsMicroservice/PresentationLayer.csproj.user
+
+ProductsMicroservice/DataAccessLayer/bin/
+
+ProductsMicroservice/ProductsMicroservice/bin/

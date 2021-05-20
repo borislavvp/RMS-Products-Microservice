@@ -32,7 +32,7 @@ namespace DatabaseLayer.BaseRepos
 
         public ICollection<ProductEntity> GetAll()
         {
-            ICollection<ProductEntity> temp = _context.Products.ToList();
+            ICollection<ProductEntity> temp = _context.Products.Include(x => x.Category).ToList();
             return temp;
         }
 
