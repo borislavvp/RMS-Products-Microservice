@@ -73,20 +73,11 @@ namespace PresentationLayer.Controllers
             return Ok(product.Delete(id));
         }
 
-        [HttpPut]
-        [Route("products/update/{id}")]
-        public IActionResult Update
-        (
-            Guid id,
-            [FromForm] string name = "default",
-            [FromForm] string description = "default",
-            [FromForm] string ingredients = "default",
-            [FromForm] double price = -1,
-            [FromForm] string img = "default",
-            [FromForm] int availability = -999
-        )
+        [HttpPost]
+        [Route("products/update")]
+        public IActionResult Update([FromForm] ProductModel p)
         {
-            return Ok(product.Update(id,name,description,ingredients,price,img,availability));
+            return Ok(product.Update(p.Id,p.Name,p.Description,p.Ingredients,p.Price,p.Image,p.Availability));
         }
 
     }

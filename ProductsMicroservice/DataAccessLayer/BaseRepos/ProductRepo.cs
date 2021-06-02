@@ -1,5 +1,6 @@
 ﻿using DatabaseLayer.DB;
 using DatabaseLayer.Entities;
+using DatabaseLayer.RelationshipRepos;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,13 @@ namespace DatabaseLayer.BaseRepos
     {
         private readonly ApplicationDbContext _context;
         private readonly DbSet<ProductEntity> _dbSet;
+        private readonly CategoryProductRepo cp;
 
         public ProductRepo(ApplicationDbContext context)
         {
             this._context = context;
             this._dbSet = _context.Set<ProductEntity>();
+            this.cp = new CategoryProductRepo(_context);
         }
 
         public int Delete(Guid id)
@@ -70,7 +73,8 @@ namespace DatabaseLayer.BaseRepos
             string ingredients = "default",
             double price = -1,
             string img = "default",
-            int availability = -999
+            int availability = 999,
+            CategoryEntity cat = null
             )
         {
             if (idOfEntityToUpdate != null)
@@ -82,39 +86,46 @@ namespace DatabaseLayer.BaseRepos
                     {
                         temp.Name = name;
                         _context.Entry(temp).Property(x => x.Name).IsModified = true;
-                        return _context.SaveChanges();
+
                     }
                     if (description != "default")
                     {
                         temp.Description = description;
                         _context.Entry(temp).Property(x => x.Description).IsModified = true;
-                        return _context.SaveChanges();
+
                     }
                     if (img != "default")
                     {
                         temp.Image = img;
                         _context.Entry(temp).Property(x => x.Image).IsModified = true;
-                        return _context.SaveChanges();
+
                     }
                     if (ingredients != "default")
                     {
                         temp.Ingredients = ingredients;
                         _context.Entry(temp).Property(x => x.Ingredients).IsModified = true;
-                        return _context.SaveChanges();
+
                     }
                     if (price != -1)
                     {
                         temp.Price = price;
                         _context.Entry(temp).Property(x => x.Price).IsModified = true;
-                        return _context.SaveChanges();
+
                     }
                     if (availability != 999)
                     {
                         temp.Availability = availability;
                         _context.Entry(temp).Property(x => x.Availability).IsModified = true;
-                        return _context.SaveChanges();
-                    }
 
+                    }
+                    if(cat != null)
+                    {
+                        temp.Category = cat;
+                        temp.CategoryId = cat.Id;
+                        _context.SaveChanges();
+                        this.cp.Attach(cat.Id, temp.Id);
+                    }
+                    return _context.SaveChanges();
 
                 }
                 return 0;
