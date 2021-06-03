@@ -41,7 +41,7 @@ namespace ProductsMicroservice
                        .AllowAnyHeader();
             }));
             services.AddDbContext<ApplicationDbContext>(
-                options => options.UseSqlServer(@"Server=DESKTOP-GJVD2M7;Database=proep-products;Trusted_Connection=True"));
+                options => options.UseSqlServer(@"Server=DESKTOP-F4K0DPU;Database=ProEP-Products;User Id=rosen;Password=igraiku;"));
             services.AddScoped(x => new BlobServiceClient(Configuration.GetValue<string>("ConnectionStringAzureBlob")));
             services.AddScoped<IBlobService, BlobService>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
