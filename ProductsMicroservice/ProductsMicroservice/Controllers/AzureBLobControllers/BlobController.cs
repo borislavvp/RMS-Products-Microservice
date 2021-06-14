@@ -21,7 +21,7 @@ namespace PresentationLayer.Controllers.AzureBLobControllers
 
         [HttpPost, DisableRequestSizeLimit]
         [Route("blob/upload")]
-        public  ActionResult UploadImage()
+        public async Task<ActionResult> UploadImage()
         {
             IFormFile file = Request.Form.Files[0];
             if (file == null)
@@ -29,8 +29,8 @@ namespace PresentationLayer.Controllers.AzureBLobControllers
                 return BadRequest();
             }
 
-            var result =  _blobService.UploadBlobAsync(
-                    
+            var result = await _blobService.UploadBlobAsync(
+
                     file.OpenReadStream(),
                     file.ContentType,
                     file.FileName);
@@ -48,9 +48,9 @@ namespace PresentationLayer.Controllers.AzureBLobControllers
 
         [HttpDelete]
         [Route("blob/delete/{name}")]
-        public ActionResult DeleteImage(string name)
+        public async Task<ActionResult> DeleteImage(string name)
         {
-            return Ok(this._blobService.DeleteBlobAsync(name));
+            return Ok(await this._blobService.DeleteBlobAsync(name));
         }
     }
 }

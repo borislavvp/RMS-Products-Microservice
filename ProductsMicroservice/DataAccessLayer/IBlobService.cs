@@ -11,8 +11,8 @@ namespace DatabaseLayer
     {
         public string GetBlobAsync(string name);
 
-        public Task UploadBlobAsync(Stream content, string contentType, string fileName);
+        public Task<int> UploadBlobAsync(Stream content, string contentType, string fileName);
 
-        public Task DeleteBlobAsync(string fileName);
+        public Task<int> DeleteBlobAsync(string fileName);
     }
 }

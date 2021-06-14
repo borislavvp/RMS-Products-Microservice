@@ -17,9 +17,20 @@ namespace DatabaseLayer.AzureBlobRepo
         {
             this._blob = blob;
         }
-        public Task DeleteBlobAsync(string fileName)
+        public async Task<int> DeleteBlobAsync(string fileName)
         {
-            throw new NotImplementedException();
+            var containerClient = _blob.GetBlobContainerClient("products");
+            var blobClient = containerClient.GetBlobClient(fileName);
+            try
+            {
+                await blobClient.DeleteAsync();
+                return 1;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+                
+            }
         }
 
         public  string GetBlobAsync(string name)
@@ -32,7 +43,7 @@ namespace DatabaseLayer.AzureBlobRepo
                 {
                     BlobContainerName = "products",
                     BlobName = name,
-                    Resource = "proep"
+                    Resource = "b"
                 };
                 sas.ExpiresOn = DateTimeOffset.UtcNow.AddHours(1);
                 sas.SetPermissions(BlobSasPermissions.Read);
@@ -42,11 +53,19 @@ namespace DatabaseLayer.AzureBlobRepo
             
         }
 
-        public async Task UploadBlobAsync(Stream content, string contentType, string fileName)
+        public async Task<int> UploadBlobAsync(Stream content, string contentType, string fileName)
         {
             var containerClient = _blob.GetBlobContainerClient("products");
             var blobClient = containerClient.GetBlobClient(fileName);
-            await blobClient.UploadAsync(content, new BlobHttpHeaders { ContentType = contentType });
+            try
+            {
+                await blobClient.UploadAsync(content);
+                return 1;
+            }
+            catch(Exception ex)
+            {
+                return 0;
+            }
         }
     }
 }
