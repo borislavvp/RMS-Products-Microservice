@@ -40,12 +40,10 @@ namespace ProductsMicroservice
                        .AllowAnyMethod()
                        .AllowAnyHeader();
             }));
-            services.AddDbContext<ApplicationDbContext>(
-                options => options.UseSqlServer(@"Server=DESKTOP-F4K0DPU;Database=ProEP-Products;User Id=rosen;Password=igraiku;"));
-            services.AddScoped(x => new BlobServiceClient(Configuration.GetValue<string>("ConnectionStringAzureBlob")));
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped(x => new BlobServiceClient(Configuration.GetConnectionString(("ConnectionStringAzureBlob"))));
             services.AddScoped<IBlobService, BlobService>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,7 +55,7 @@ namespace ProductsMicroservice
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
 
             app.UseRouting();
 
